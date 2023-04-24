@@ -1,0 +1,11 @@
+.item-filter {
+    flex: 1;
+
+    &__form {
+        display: flex;
+
+        input {
+            flex: 1;
+        }
+    }
+}

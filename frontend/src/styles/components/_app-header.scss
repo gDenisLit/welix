@@ -1,0 +1,99 @@
+.app-header {
+    border-bottom: 1px solid $clr3;
+    margin-block-end: rem(25px);
+    padding: em(10px) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.677);
+        z-index: 10;
+        opacity: 0;
+        pointer-events: none;
+        cursor: pointer;
+        transition: opacity .6s;
+    }
+
+    .screen.open {
+        pointer-events: auto;
+        opacity: 1;
+        transition: opacity .6s;
+    }
+
+    .logo {
+        font-size: em(48px);
+        cursor: pointer;
+
+        img {
+            width: em(20px);
+        }
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        
+        @include for-mobile-layout {
+            display: block;
+        }
+
+        img {
+            width: rem(50px);
+        }
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: em(20px);
+
+        &.open {
+            transform: translateX(0);
+        }
+
+        @include for-mobile-layout {
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: white;
+            height: 100vh;
+            padding: rem(30px);
+            width: rem(300px);
+            z-index: 20;
+            transform: translateX(100%);
+            transition: transform .6s, box-shadow .6s;
+        }
+
+        .nav-link {
+            color: #000;
+            cursor: pointer;
+        }
+
+        a.router-link-exact-active {
+            text-decoration: underline;
+        }
+
+        &-user {
+            img {
+                width: em(40px);
+                cursor: pointer;
+            }
+
+            div {
+                button {
+                    position: absolute;
+                    right: 0;
+                    margin-right: 10px;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}

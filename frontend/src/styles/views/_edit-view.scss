@@ -1,0 +1,11 @@
+.edit-view {
+    &__form {
+
+        img {
+            width: em(200px);
+            border-radius: 50%;
+            border: 1px solid $primary-clr;
+            margin-block-end: em(20px);
+        }
+    }
+}

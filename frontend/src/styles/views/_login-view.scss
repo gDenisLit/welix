@@ -1,0 +1,31 @@
+.login-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: em(10px);
+
+        h2 {
+            font-size: rem(40px);
+            letter-spacing: 0;
+            margin-bottom: rem(18px);
+        }
+
+        img {
+            width: 200px;
+            border-radius: 50%;
+            border: 1px solid $primary-clr;
+        }
+
+        p {
+            cursor: pointer;
+        }
+    }
+}

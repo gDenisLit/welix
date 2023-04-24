@@ -1,0 +1,30 @@
+.c-btn {
+    background-color: transparent;
+    border: 1px solid $clr3;
+    padding: rem(10px) rem(20px);
+    font-family: $font1;
+    font-size: 1rem;
+    border-radius: rem(5px);
+    color: $txt-clr;
+    cursor: pointer;
+    display: block;
+    width: max-content;
+    
+    &:hover {
+        border-color: $primary-clr;
+        color: $primary-clr;
+    }
+
+    &.primary{
+        background-color: $primary-clr;
+        color: #fff;
+    }
+}
+
+.c-input {
+    padding: rem(10px);
+    border-radius: rem(5px);
+    border: 1px solid $clr3;
+    font-family: $font1;
+    font-size: 1rem;
+}
