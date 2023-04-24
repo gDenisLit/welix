@@ -1,6 +1,7 @@
 import { createStore, Store } from 'vuex'
 import { itemStore, ItemState } from './modules/item.store'
-import { userStore, UserState } from './modules/user.store'
+import { UserState, userStore } from './modules/user/user.store'
+
 
 export interface RootState {
     itemStore: ItemState,
