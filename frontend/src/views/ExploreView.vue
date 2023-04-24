@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import { store } from '@/store'
+import { useStore } from 'vuex'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import templatePageLayout from '@/layouts/template-page/template-page.layout.vue'
-import appHeader from '@/components/app/app-header/app-header.vue'
-import wapList from '@/components/app/wap-list/wap-list.vue'
 import type { Wap } from '@/models/Wap.model'
+import ExploreList from '@/components/ExploreList.vue'
 
 const router = useRouter()
-store.dispatch({
-    type: 'loadWaps',
-    filterBy: { isTemplate: true }
-})
+const store = useStore()
+
 const waps = computed(() => {
     return store.getters.getWaps
 })
@@ -30,18 +26,19 @@ const previewWap = (wapId: string) => {
 </script>
 
 <template>
-    <template-page-layout>
-        <template #header>
-            <app-header />
-        </template>
-        <template #heading>
-            <span>Pick one of our professionally designed website templates</span>
-        </template>
-        <template #sub-heading>
-            <span>Or express your inner creativity and start from blank</span>
-        </template>
-        <template #wap-list>
-            <wap-list :waps="waps" @editWap="editWap" @previewWap="previewWap" />
-        </template>
-    </template-page-layout>
+    <main class="explore-view">
+        <section class="explore-view__wrapper main-layout">
+            <div class="explore-view__inner">
+                <div class="headings">
+                    <h2>
+                        Pick one of our professionally designed website templates
+                    </h2>
+                    <h3>
+                        Or express your inner creativity and start from blank
+                    </h3>
+                </div>
+                <ExploreList :waps="waps" @editWap="editWap" @previewWap="previewWap" />
+            </div>
+        </section>
+    </main>
 </template>

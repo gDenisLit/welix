@@ -1,6 +1,6 @@
-import { ActionContext } from "vuex"
-import { User } from "../../../models/User.model"
-import { RootState } from "../.."
+import type { ActionContext } from "vuex"
+import type { User } from "../../../models/User.model"
+import type { RootState } from "../.."
 import { userActions } from "./user.actions"
 
 export interface UserState {

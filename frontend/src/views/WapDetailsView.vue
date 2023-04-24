@@ -1,23 +1,21 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { onMounted, shallowRef } from 'vue'
+import { onMounted, ref } from 'vue'
 import { wapService } from '@/services/wap.service'
-import wapDetailsLayout from '@/layouts/wap-details/wap-details.layout.vue'
-import wapDetails from '@/components/editor/wap-details/wap-details.vue'
+import { cmps } from '@/services/cmp.service'
+import type { Wap } from '@/models/Wap.model'
 
-const route = useRoute()
-const { id } = route.params
+const wap = ref<Wap | null>(null)
 
-let wap = shallowRef()
 onMounted(async () => {
-    wap.value = await wapService.getById(id)
+    const { id } = useRoute().params
+    const _wap = await wapService.getById(id)
+    if (_wap) wap.value = _wap
 })
 </script>
 
 <template>
-    <wap-details-layout :class="wap?.class" v-if="wap">
-        <template #wap>
-            <wap-details :wap="wap" />
-        </template>
-    </wap-details-layout>
+    <section class="wap-details" :class="wap.class" v-if="wap">
+        <component v-for="cmp in wap?.cmps" :is="cmps[cmp.type]" :cmp="cmp" :wap="wap" />
+    </section>
 </template>

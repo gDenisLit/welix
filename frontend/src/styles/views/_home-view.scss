@@ -1,0 +1,27 @@
+.home-view {
+
+    .top-wrapper {
+        width: 100vw;
+        height: 100vh;
+
+        @include for-medium-layout {
+            margin-bottom: 0;
+        }
+    }
+
+    .bg-cover-hero {
+        position: absolute;
+        top: -44vh;
+        right: -26vw;
+        width: 80%;
+        height: 120%;
+        background-color: #be123c;
+        border-radius: 5.5rem;
+        transform: rotate(162deg);
+        display: none;
+
+        @include for-small-layout {
+            display: block;
+        }
+    }
+}

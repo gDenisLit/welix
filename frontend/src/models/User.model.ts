@@ -1,8 +1,10 @@
+import type { Wap } from "./Wap.model"
+
 export interface User {
     _id?: string
-    username?: string,
-    password?: string,
-    fullname: string,
-    isAdmin?: boolean,
-    imgUrl?: string
+    fullname?: string
+    username?: string
+    password?: string
+    img?: string
+    waps?: Wap[]
 }

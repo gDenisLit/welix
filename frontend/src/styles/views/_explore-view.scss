@@ -1,0 +1,26 @@
+.explore-view {
+    height: 100vh;
+    width: 100vw;
+
+    &__inner {
+        margin-top: em(50px);
+        width: 100%;
+
+        .headings {
+            text-align: left;
+            font-family: Nunito-regular;
+            max-width: 500px;
+            line-height: em(48px);
+
+            h2 {
+                font-size: em(42px);
+                margin-bottom: rem(10px);
+            }
+
+            h3 {
+                margin-block-end: em(28px);
+                line-height: rem(18px);
+            }
+        } 
+    }
+}
