@@ -1,62 +1,35 @@
-<template>
-    <main class="login-view">
-        <form @submit.prevent="login" class="login-view__form">
-            <h2>{{ loginType }}</h2>
-            <UploadImg @uploaded="setImgUrl" :imgUrl="credentials.imgUrl" />
-            <input class="c-input" v-model="credentials.fullname" type="text" placeholder="Full name" v-if="isSignUp" />
-            <input class="c-input" v-model="credentials.username" type="text" placeholder="Username" autofocus />
-            <input class="c-input" v-model="credentials.password" type="password" placeholder="Password" show-password />
-            <button class="c-btn">{{ loginType }}</button>
-            <p @click="isSignUp = !isSignUp">{{ loginSignup }}</p>
-        </form>
-    </main>
-</template>
-
-<script lang="ts" setup>
-import { reactive, ref, computed } from 'vue'
+<script setup lang="ts">
+import { reactive, computed } from 'vue'
 import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import UploadImg from '../components/UploadImg.vue'
+import loginPageLayout from '@/layouts/login-page/login-page.layout.vue'
+import appHeader from '@/components/app/app-header/app-header.vue'
+import loginForm from '@/components/app/login-form/login.form.vue'
 
 const store = useStore()
-const router = useRouter()
-
+const user = computed(() => {
+    return store.getters.getUser
+})
 const credentials = reactive({
-    username: '',
-    password: '',
     fullname: '',
-    isAdmin: false,
-    imgUrl: ''
+    username: '',
+    email: '',
+    password: '',
 })
-const isSignUp = ref(false)
-
-async function login() {
-    try {
-        const type = isSignUp.value ? 'signup' : 'login'
-        const user = await store.dispatch({
-            type,
-            credentials: { ...credentials }
-        })
-        showSuccessMsg('Welcom ' + user.fullname)
-        router.push('/')
-    }
-    catch (err) {
-        showErrorMsg('Wrong Credentials')
-    }
+const handleLogin = async () => {
+    await store.dispatch({
+        type: 'login',
+        credentials,
+    })
 }
-
-function setImgUrl(imgUrl: string) {
-    credentials.imgUrl = imgUrl
-}
-
-const loginType = computed(() => {
-    return isSignUp.value ? 'Signup' : 'Login'
-})
-
-const loginSignup = computed(() => {
-    return isSignUp.value ?
-        'Already a memeber? Click here to login' :
-        'Not a member? Click here to signup'
-})
 </script>
+
+<template>
+    <login-page-layout>
+        <template #header>
+            <app-header :user="user" />
+        </template>
+        <template #login-form>
+            <login-form :credentials="credentials" @login="handleLogin" />
+        </template>
+    </login-page-layout>
+</template>
