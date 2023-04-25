@@ -1,0 +1,31 @@
+.scroll-indicator {
+    width: 2.1em;
+    height: 4em;
+    border: solid 2px $primary-color;
+    border-radius: em(30px);
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        width: 0.4em;
+        height: 0.4em;
+        border-radius: 50%;
+        background: #99aab5;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll 2.5s infinite;
+    }
+
+    @keyframes scroll {
+        0% {
+            bottom: 80%;
+            opacity: 1;
+        }
+        100%{
+            bottom: 20%;
+            opacity: 0;
+        }
+    }
+}

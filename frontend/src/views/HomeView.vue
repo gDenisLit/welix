@@ -16,11 +16,13 @@
                 <router-link class="hero-btn" to="/template">
                     Get started
                 </router-link>
-                <a href="#bullets" class="learn-more">learn more</a>
+                <a href="#bullets" class="learn-more">
+                    <ScrollIndicator />
+                </a>
             </div>
         </section>
         <section class="bullet-points" id="bullets">
-            <div class="headers" >
+            <div class="headers">
                 <h2 v-motion :initial="{ opacity: 0, y: 500 }" :visible="{ opacity: 1, y: 0 }">GROW YOUR</h2>
                 <h2 v-motion :initial="{ opacity: 0, x: 500 }" :visible="{ opacity: 1, x: 0 }">BUSINESS</h2>
                 <h2 v-motion :initial="{ opacity: 0, x: -500 }" :visible="{ opacity: 1, x: 0 }">ONLINE
@@ -43,11 +45,15 @@
                     </article>
                 </div>
             </div>
+            <a href="#">
+                <ScrollIndicator />
+            </a>
         </section>
     </main>
 </template>
 
 <script setup lang="ts">
+import ScrollIndicator from '../components/ScrollIndicator.vue'
 const steps = [
     {
         title: 'Create a website',

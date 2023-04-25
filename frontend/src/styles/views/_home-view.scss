@@ -5,7 +5,7 @@
 
     .app-hero {
         // scroll-behavior: smooth;
-        height: 93.2vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -108,6 +108,7 @@
         padding-block-start: rem(105px);
         font-size: rem(14px);
         background-color: #FEFEFE;
+        position: relative;
 
         .headers {
             text-align: center;
@@ -135,11 +136,11 @@
             >:first-child {
                 padding-inline-end: em(18px);
             }
-            
+
             >:nth-child(2) {
                 padding-inline-start: em(35px);
             }
-            
+
             >:last-child {
                 padding-inline-end: em(10px);
             }
@@ -182,6 +183,13 @@
                     }
                 }
             }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            right: 200px;
+            bottom: 200px;
+            scale: 2
         }
     }
 }
