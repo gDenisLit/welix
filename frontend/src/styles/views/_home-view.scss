@@ -84,8 +84,9 @@
 
     .bullet-points {
         height: 100vh;
-        padding-block-start: rem(50px);
-
+        padding-block-start: rem(105px);
+        font-size: rem(14px);
+        background-color: #FEFEFE;
         .headers {
             text-align: center;
             font-family: Nunito-Bold;
@@ -129,9 +130,11 @@
             padding-inline-end: em(270px);
 
             .demo {
-                flex-basis: 30%;
-                background-color: rgb(172, 172, 172);
-                height: 500px;
+                flex-basis: 40%;
+                padding-block-end: em(40px);
+                img {
+                    width: 100%;
+                }
             }
 
             .cards {
@@ -148,6 +151,9 @@
 
                     h2 {
                         margin-block-end: rem(20px);
+                    }
+                    h5 {
+                        font-size: em(15px);
                     }
                 }
             }

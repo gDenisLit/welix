@@ -30,7 +30,7 @@
             </div>
             <div class="steps">
                 <div class="demo">
-                    Illustration
+                   <img src="../assets/img/bullets.gif" alt="">
                 </div>
                 <div class="cards">
                     <article v-for="(step, idx) in steps" :key="step.title">
