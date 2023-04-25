@@ -2,10 +2,13 @@
 
     flex: 1;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
     .app-hero {
+        height: 93vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
         .overlay,
         &__background {
             width: 100vw;
@@ -43,7 +46,7 @@
                 margin-block-end: em(5px);
                 line-height: em(15px);
             }
-            
+
             .hero-subheader {
                 font-size: 0.27em;
                 font-family: Nunito-Light;
@@ -74,6 +77,78 @@
                 &:hover {
                     color: $dark-color;
                     background-color: $light-color;
+                }
+            }
+        }
+    }
+
+    .bullet-points {
+        height: 100vh;
+        padding-block-start: rem(50px);
+
+        .headers {
+            text-align: center;
+            font-family: Nunito-Bold;
+            letter-spacing: -12px;
+            line-height: 180px;
+            margin-block-end: em(50px);
+            
+            >:first-child {
+                padding-inline-end: em(18px);
+            }
+            
+            >:nth-child(2) {
+                padding-inline-start: em(35px);
+            }
+            
+            >:last-child {
+                padding-inline-end: em(10px);
+            }
+            
+            h2 {
+                font-size: em(200px);
+                .action {
+                    letter-spacing: 0px;
+                    text-transform: uppercase;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    color: $dark-color;                    
+                    font-size: 0.2em;
+                    width: max-content;
+                    display: inline;
+                }
+            }
+
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: em(200px);
+            padding-inline-end: em(270px);
+
+            .demo {
+                flex-basis: 30%;
+                background-color: rgb(172, 172, 172);
+                height: 500px;
+            }
+
+            .cards {
+                article {
+                    display: flex;
+                    align-items: center;
+                    gap: em(130px);
+                    width: em(550px);
+                    font-family: Nunito-Bold;
+                    
+                    h3 {
+                        font-size: em(140px);
+                    }
+
+                    h2 {
+                        margin-block-end: rem(20px);
+                    }
                 }
             }
         }
