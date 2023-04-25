@@ -1,0 +1,99 @@
+.app-hero {
+    // scroll-behavior: smooth;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .overlay,
+    &__background {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.884);
+        z-index: 5;
+    }
+
+    &__background {
+        min-height: 100vh;
+        background-color: black;
+        object-fit: cover;
+    }
+
+    .text-container {
+        font-family: Nunito-bold;
+        font-size: em(78px);
+        position: relative;
+        z-index: 20;
+        color: $light-color;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .hero-header {
+            width: em(180px);
+            margin-block-end: em(5px);
+            line-height: em(15px);
+        }
+
+        .hero-subheader {
+            font-size: 0.27em;
+            font-family: Nunito-Light;
+            width: em(500px);
+            margin-block-end: em(35px);
+        }
+
+        .hero-btn {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $dark-color;
+            letter-spacing: em(1.3px);
+            padding: em(5px) em(10px);
+            cursor: pointer;
+            display: inline-block;
+            // margin-block-end: em(300px);
+
+            @include for-narrow-layout {
+                font-size: em(8px);
+            }
+
+            &.link-dashboard {
+                padding-right: 0;
+            }
+
+            background-color: $primary-color;
+            color: $light-color;
+
+            &:hover {
+                color: $dark-color;
+                background-color: $light-color;
+            }
+        }
+
+        .learn-more {
+            text-decoration: underline;
+            text-transform: uppercase;
+            font-size: em(5px);
+            position: relative;
+            top: 350px;
+            cursor: pointer;
+            animation: beat 1.4s infinite alternate;
+            transform-origin: center;
+            color: $light-color;
+
+            @keyframes beat {
+                to {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

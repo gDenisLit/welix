@@ -1,0 +1,89 @@
+.bullet-points {
+    height: 100vh;
+    padding-block-start: rem(105px);
+    font-size: rem(14px);
+    background-color: #FEFEFE;
+    position: relative;
+
+    .headers {
+        text-align: center;
+        font-family: Nunito-Bold;
+        letter-spacing: -12px;
+        line-height: 180px;
+        margin-block-end: em(50px);
+
+
+        h2 {
+            font-size: em(200px);
+
+            .action {
+                letter-spacing: 0px;
+                text-transform: uppercase;
+                text-decoration: underline;
+                cursor: pointer;
+                color: $dark-color;
+                font-size: 0.2em;
+                width: max-content;
+                display: inline;
+            }
+        }
+
+        >:first-child {
+            padding-inline-end: em(18px);
+        }
+
+        >:nth-child(2) {
+            padding-inline-start: em(35px);
+        }
+
+        >:last-child {
+            padding-inline-end: em(10px);
+        }
+    }
+
+    .steps {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: em(200px);
+        padding-inline-end: em(270px);
+
+        .demo {
+            flex-basis: 40%;
+            padding-block-end: em(40px);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .cards {
+            article {
+                display: flex;
+                align-items: center;
+                gap: em(130px);
+                width: em(550px);
+                font-family: Nunito-Bold;
+
+                h3 {
+                    font-size: em(140px);
+                }
+
+                h2 {
+                    margin-block-end: rem(20px);
+                }
+
+                h5 {
+                    font-size: em(15px);
+                }
+            }
+        }
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        right: 200px;
+        bottom: 200px;
+        scale: 2
+    }
+}
