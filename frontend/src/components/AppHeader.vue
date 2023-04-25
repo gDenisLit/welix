@@ -20,7 +20,7 @@ const shouldShow = computed(() => {
 </script>
 
 <template>
-    <header class="app-header">
+    <header class="app-header animate-fade-in">
         <div class="screen full" @click="toggleMenu" v-if="isMenuOpen"></div>
         <div class="app-header__inner flex justify-between items-center">
             <section class="logo-wrapper">

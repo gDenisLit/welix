@@ -1,10 +1,10 @@
 <template>
     <main class="home-view">
-        <section class="app-hero">
-            <div class="overlay"></div>
+        <section class="app-hero" id="hero">
+            <div class="overlay animate-fade-in"></div>
             <img src="../assets/img/hero3.jpg" alt="" class="app-hero__background">
 
-            <div class="text-container">
+            <div class="text-container animate-fade-in">
                 <h1 class="hero-header">
                     Create a website without limits
                 </h1>
@@ -16,13 +16,14 @@
                 <router-link class="hero-btn" to="/template">
                     Get started
                 </router-link>
+                <a href="#bullets" class="learn-more">learn more</a>
             </div>
         </section>
-        <section class="bullet-points">
-            <div class="headers">
-                <h2>GROW YOUR</h2>
-                <h2>BUSINESS</h2>
-                <h2>ONLINE
+        <section class="bullet-points" id="bullets">
+            <div class="headers" >
+                <h2 v-motion :initial="{ opacity: 0, y: 500 }" :visible="{ opacity: 1, y: 0 }">GROW YOUR</h2>
+                <h2 v-motion :initial="{ opacity: 0, x: 500 }" :visible="{ opacity: 1, x: 0 }">BUSINESS</h2>
+                <h2 v-motion :initial="{ opacity: 0, x: -500 }" :visible="{ opacity: 1, x: 0 }">ONLINE
                     <router-link class="action" to="/template">
                         Get started →
                     </router-link>
@@ -30,7 +31,7 @@
             </div>
             <div class="steps">
                 <div class="demo">
-                   <img src="../assets/img/bullets.gif" alt="">
+                    <img src="../assets/img/bullets.gif" alt="">
                 </div>
                 <div class="cards">
                     <article v-for="(step, idx) in steps" :key="step.title">

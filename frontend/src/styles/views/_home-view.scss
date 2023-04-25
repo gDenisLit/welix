@@ -1,9 +1,11 @@
 .home-view {
 
     flex: 1;
+    scroll-behavior: smooth;
 
     .app-hero {
-        height: 93vh;
+        // scroll-behavior: smooth;
+        height: 93.2vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -62,6 +64,7 @@
                 padding: em(5px) em(10px);
                 cursor: pointer;
                 display: inline-block;
+                // margin-block-end: em(300px);
 
                 @include for-narrow-layout {
                     font-size: em(8px);
@@ -79,6 +82,24 @@
                     background-color: $light-color;
                 }
             }
+
+            .learn-more {
+                text-decoration: underline;
+                text-transform: uppercase;
+                font-size: em(5px);
+                position: relative;
+                top: 350px;
+                cursor: pointer;
+                animation: beat 1.4s infinite alternate;
+                transform-origin: center;
+                color: $light-color;
+
+                @keyframes beat {
+                    to {
+                        transform: scale(1.1);
+                    }
+                }
+            }
         }
     }
 
@@ -87,13 +108,30 @@
         padding-block-start: rem(105px);
         font-size: rem(14px);
         background-color: #FEFEFE;
+
         .headers {
             text-align: center;
             font-family: Nunito-Bold;
             letter-spacing: -12px;
             line-height: 180px;
             margin-block-end: em(50px);
-            
+
+
+            h2 {
+                font-size: em(200px);
+
+                .action {
+                    letter-spacing: 0px;
+                    text-transform: uppercase;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    color: $dark-color;
+                    font-size: 0.2em;
+                    width: max-content;
+                    display: inline;
+                }
+            }
+
             >:first-child {
                 padding-inline-end: em(18px);
             }
@@ -105,21 +143,6 @@
             >:last-child {
                 padding-inline-end: em(10px);
             }
-            
-            h2 {
-                font-size: em(200px);
-                .action {
-                    letter-spacing: 0px;
-                    text-transform: uppercase;
-                    text-decoration: underline;
-                    cursor: pointer;
-                    color: $dark-color;                    
-                    font-size: 0.2em;
-                    width: max-content;
-                    display: inline;
-                }
-            }
-
         }
 
         .steps {
@@ -132,6 +155,7 @@
             .demo {
                 flex-basis: 40%;
                 padding-block-end: em(40px);
+
                 img {
                     width: 100%;
                 }
@@ -144,7 +168,7 @@
                     gap: em(130px);
                     width: em(550px);
                     font-family: Nunito-Bold;
-                    
+
                     h3 {
                         font-size: em(140px);
                     }
@@ -152,6 +176,7 @@
                     h2 {
                         margin-block-end: rem(20px);
                     }
+
                     h5 {
                         font-size: em(15px);
                     }

@@ -2,27 +2,35 @@
 .flex {
   display: flex;
 }
+
 .flex.flex-column {
   flex-direction: column;
 }
+
 .flex.inline-flex {
   display: inline-flex;
 }
+
 .align-self-center {
   align-self: center;
 }
+
 .self-end {
   align-self: flex-end;
 }
+
 .flex.items-center {
   align-items: center;
 }
+
 .flex.justify-center {
   justify-content: center;
 }
+
 .flex.justify-end {
   justify-content: flex-end;
 }
+
 .flex.justify-between {
   justify-content: space-between;
 }
@@ -32,6 +40,22 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.animate-fade-in {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 // Text
