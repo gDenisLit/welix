@@ -1,14 +1,30 @@
 // COLORS
-$clr1: #dfdfdf;
-$clr2: #ffffff;
-$clr3: #0000002d;
-$txt-clr: #000000c8;
+// $primary-color: #e0943d;
+$primary-color: #be123c;
+$primary-color-dark: darken(#be123c, 8%);
+$primary-color-light: lighten(#be123c, 15%);
 
-$primary-clr: #409EFF;
-$success-clr: #67C23A;
-$info-clr: #c5c5c5af;
-$warning-clr: #E6A23C;
-$danger-clr: #F56C6C;
+$secondary-color: #375aad;
+$secondary-color-dark: darken(#375aad, 8%);
+$secondary-color-light: lighten(#375aad, 10%);
+
+$dark-color: #000000;
+$dark-color1: #212529;
+$dark-color2: #333;
+$dark-color3: #343a40;
+$dark-color4: #525252;
+$dark-color5: #495057;
+$dark-color7: #9a9a9a;
+
+$light-color: #ffffff;
+$light-color1: #f8f9fa;
+$light-color2: #f1f3f5;
+$light-color3: #e9ecef;
+$light-color4: #eeeeee;
+$light-color5: #adb5bd;
+
+$success-clr: green;
+$danger-clr: red;
 
 // LAYOUT
 $layoutPadding: 40px;
@@ -25,6 +41,3 @@ $break-wide: 1500px;
 $padded-break-narrow: $break-narrow + $layoutPadding * 2;
 $padded-break-normal: $break-normal + $layoutPadding * 2;
 $padded-break-wide: $break-wide + $layoutPadding * 2;
-
-
-$font1 : Roboto-Regular, sans-serif;

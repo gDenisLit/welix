@@ -7,8 +7,9 @@
 
 <script lang="ts" setup>
 import { ref, computed, onUnmounted } from 'vue'
-import { eventBus, Msg } from '../services/event-bus.service'
-import { utilService } from '../services/util.service';
+import { eventBus } from '../services/event-bus.service'
+import type { Msg } from '../services/event-bus.service'
+import { utilService } from '../services/util.service'
 
 
 const msg = ref<Msg | null>(null)

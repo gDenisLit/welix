@@ -1,27 +1,81 @@
 .home-view {
 
-    .top-wrapper {
-        width: 100vw;
-        height: 100vh;
+    flex: 1;
 
-        @include for-medium-layout {
-            margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .app-hero {
+        .overlay,
+        &__background {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
-    }
 
-    .bg-cover-hero {
-        position: absolute;
-        top: -44vh;
-        right: -26vw;
-        width: 80%;
-        height: 120%;
-        background-color: #be123c;
-        border-radius: 5.5rem;
-        transform: rotate(162deg);
-        display: none;
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.884);
+            z-index: 5;
+        }
 
-        @include for-small-layout {
-            display: block;
+        &__background {
+            min-height: 100vh;
+            background-color: black;
+            object-fit: cover;
+        }
+
+        .text-container {
+            font-family: Nunito-bold;
+            font-size: em(78px);
+            position: relative;
+            z-index: 20;
+            color: $light-color;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .hero-header {
+                width: em(180px);
+                margin-block-end: em(5px);
+                line-height: em(15px);
+            }
+            
+            .hero-subheader {
+                font-size: 0.27em;
+                font-family: Nunito-Light;
+                width: em(500px);
+                margin-block-end: em(35px);
+            }
+
+            .hero-btn {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $dark-color;
+                letter-spacing: em(1.3px);
+                padding: em(5px) em(10px);
+                cursor: pointer;
+                display: inline-block;
+
+                @include for-narrow-layout {
+                    font-size: em(8px);
+                }
+
+                &.link-dashboard {
+                    padding-right: 0;
+                }
+
+                background-color: $primary-color;
+                color: $light-color;
+
+                &:hover {
+                    color: $dark-color;
+                    background-color: $light-color;
+                }
+            }
         }
     }
 }

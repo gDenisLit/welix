@@ -1,7 +1,7 @@
 import { storageService } from './storage.service'
 import { httpService } from './http.service'
 import { utilService } from './util.service'
-import { User } from '../models/User.model'
+import type { User } from '../models/User.model'
 
 const LOGGEIN_USER_KEY = 'loggedinUser'
 const USER_KEY = 'user_db'

@@ -1,0 +1,13 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    > *{
+        padding-inline: rem(50px); 
+    }
+    
+    > *.full {
+        padding-inline: 0 
+    }   
+}

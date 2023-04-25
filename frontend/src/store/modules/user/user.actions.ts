@@ -1,5 +1,6 @@
 import { userService } from "../../../services/user.service"
-import { Context, Payload, setLoggedinUser } from "./user.store"
+import { setLoggedinUser } from "./user.store"
+import type { Context, Payload, } from "./user.store"
 
 export const userActions = {
     login,

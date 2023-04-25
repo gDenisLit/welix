@@ -5,16 +5,14 @@
 @import 'setup/variables';
 
 // BASE
-@import 'basic/base';
-@import 'basic/helpers';
-@import 'basic/spacing';
-@import 'basic/layout';
-@import 'basic/material';
+@import 'base/base';
+@import 'base/helpers';
+@import 'base/spacing';
+@import 'base/layout';
 
 // COMPONENTS
 @import 'components/user-msg';
 @import 'components/app-header';
 
-
 // VIEWS
-
+@import 'views/home-view'

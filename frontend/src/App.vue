@@ -1,7 +1,9 @@
 <template>
     <UserMsg />
-    <AppHeader />
-    <RouterView />
+    <div class="main-layout">
+        <AppHeader />
+        <RouterView />
+    </div>
 </template>
 
 
@@ -12,8 +14,8 @@ import UserMsg from './components/UserMsg.vue'
 
 const store = useStore()
 store.dispatch({ type: 'loadLoggedinUser' })
-store.dispatch({
-    type: 'loadWaps',
-    filterBy: { isTemplate: true }
-})
+// store.dispatch({
+//     type: 'loadWaps',
+//     filterBy: { isTemplate: true }
+// })
 </script>

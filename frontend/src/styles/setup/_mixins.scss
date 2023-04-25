@@ -7,8 +7,8 @@
 }
 
 @mixin for-small-layout {
-  @media (min-width: $break-mobile) {
-    //580
+  @media (min-width: $break-small) {
+    //700
     @content;
   }
 }
@@ -50,7 +50,9 @@
 
 @mixin layoutGTC($max) {
   grid-template-columns:
-    minmax($layoutPadding, 1fr) minmax(auto, $max) minmax($layoutPadding, 1fr);
+    minmax($layoutPadding, 1fr)
+    minmax(auto, $max)
+    minmax($layoutPadding, 1fr);
 }
 
 /* Media  Mixins */
@@ -59,23 +61,20 @@
 @mixin aspect-ratio($width: 1, $height: 1) {
   position: relative;
   overflow: hidden;
-
   &:before {
     content: '';
     display: block;
     width: 100%;
     padding-top: calc($height / $width) * 100%;
   }
-
-  >* {
+  > * {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
-
-  >img {
+  > img {
     height: 100%;
     object-fit: cover;
   }
@@ -90,8 +89,6 @@
   }
 }
 
-// Label{
-
 @mixin label {
   display: inline-flex;
   align-items: center;
@@ -99,23 +96,20 @@
   color: $light-color1;
 }
 
-// Type
 @mixin type($type: bold) {
-  @if $type ==bold {
+  // type options:
+  // 1.bold
+  // 2.boldCondensed
+  // 3.condensed
+  @if $type == bold {
     font-variation-settings: 'wght' 430;
-  }
-
-  @else if $type ==boldCondensed {
+  } @else if $type == boldCondensed {
     font-variation-settings: 'wght' 430, 'wdth' 80;
     letter-spacing: em(1.5px);
-  }
-
-  @else if $type ==condensed {
+  } @else if $type == condensed {
     font-variation-settings: 'wdth' 80;
     letter-spacing: em(6.72px);
-  }
-
-  @else if $type ==light {
+  } @else if $type == light {
     font-variation-settings: 'wght' 200;
   }
 }
