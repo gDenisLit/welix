@@ -3,6 +3,7 @@
     z-index: 30;
     position: fixed;
     width: 100vw;
+
     &__inner {
         padding-block: em(10px); 
         .logo-wrapper {
@@ -25,38 +26,7 @@
                 height: rem(55px);
                 width: rem(55px);
                 margin-left: rem(60px);
-            }
-
-            .header-link {
-                text-decoration: none;
-                font-family: Nunito-bold;
-                text-transform: uppercase;
-                color: $dark-color;
-                font-size: em(12px);
-                letter-spacing: em(1.3px);
-                padding: em(24px) em(38px);
-                cursor: pointer;
-                display: inline-block;
-
-                @include for-narrow-layout {
-                    font-size: em(16px);
-                }
-
-                &.link-dashboard {
-                    padding-right: 0;
-                }
-            }
-
-            .action {
-                // border: 1px solid $dark-color;
-                background-color: $primary-color;
-                color: $light-color;
-
-                &:hover {
-                    background-color: $dark-color;
-                    color: $light-color;
-                }
-            }
+            }   
         }
     }
 }

@@ -1,31 +1,33 @@
 <template>
-    <section class="bullet-points" id="bullets">
-        <div class="headers">
-            <h2 v-motion :initial="{ opacity: 0, y: 500 }" :visible="{ opacity: 1, y: 0 }">GROW YOUR</h2>
-            <h2 v-motion :initial="{ opacity: 0, x: 500 }" :visible="{ opacity: 1, x: 0 }">BUSINESS</h2>
-            <h2 v-motion :initial="{ opacity: 0, x: -500 }" :visible="{ opacity: 1, x: 0 }">ONLINE
-                <router-link class="action" to="/template">
-                    Get started →
-                </router-link>
-            </h2>
-        </div>
-        <div class="steps">
-            <div class="demo">
-                <img src="../assets/img/bullets.gif" alt="">
+    <section class="main-layout full">
+        <section class="bullet-points" id="bullets">
+            <div class="headers">
+                <h2 v-motion :initial="{ opacity: 0, y: 500 }" :visible="{ opacity: 1, y: 0 }">GROW YOUR</h2>
+                <h2 v-motion :initial="{ opacity: 0, x: 500 }" :visible="{ opacity: 1, x: 0 }">BUSINESS</h2>
+                <h2 v-motion :initial="{ opacity: 0, x: -500 }" :visible="{ opacity: 1, x: 0 }">ONLINE
+                    <router-link class="action" to="/template">
+                        Get started →
+                    </router-link>
+                </h2>
             </div>
-            <div class="cards">
-                <article v-for="(step, idx) in steps" :key="step.title">
-                    <h3>{{ idx + 1 }}</h3>
-                    <div>
-                        <h2>{{ step.title }}</h2>
-                        <h5>{{ step.desc }}</h5>
-                    </div>
-                </article>
+            <div class="steps">
+                <div class="demo">
+                    <img src="../assets/img/bullets.gif" alt="">
+                </div>
+                <div class="cards">
+                    <article v-for="(step, idx) in steps" :key="step.title">
+                        <h3>{{ idx + 1 }}</h3>
+                        <div>
+                            <h2>{{ step.title }}</h2>
+                            <h5>{{ step.desc }}</h5>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
-        <a href="#">
-            <ScrollIndicator />
-        </a>
+            <a href="#gallery">
+                <ScrollIndicator />
+            </a>
+        </section>
     </section>
 </template>
 

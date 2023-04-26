@@ -9,6 +9,7 @@
 @import 'base/helpers';
 @import 'base/spacing';
 @import 'base/layout';
+@import 'base/animations';
 
 // COMPONENTS
 @import 'components/user-msg';
@@ -16,6 +17,7 @@
 @import 'components/scroll-indicator';
 @import 'components/home-bullet-points';
 @import 'components/app-hero';
+@import 'components/template-gallery';
 
 // VIEWS
 @import 'views/home-view'

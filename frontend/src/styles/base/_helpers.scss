@@ -42,21 +42,36 @@
   margin: 0;
 }
 
-.animate-fade-in {
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.header-link {
+  text-decoration: none;
+  font-family: Nunito-bold;
+  text-transform: uppercase;
+  color: $dark-color;
+  font-size: em(12px);
+  letter-spacing: em(1.3px);
+  padding: em(24px) em(38px);
+  cursor: pointer;
+  display: inline-block;
 
-  @keyframes fadeInAnimation {
-    0% {
-      opacity: 0;
-    }
+  @include for-narrow-layout {
+      font-size: em(16px);
+  }
 
-    100% {
-      opacity: 1;
-    }
+  &.link-dashboard {
+      padding-right: 0;
   }
 }
+
+.header-link.action {
+  background-color: $primary-color;
+  color: $light-color;
+
+  &:hover {
+      background-color: $dark-color;
+      color: $light-color;
+  }
+}
+
 
 // Text
 .vertical-text {
@@ -65,7 +80,6 @@
 }
 
 .tag-text {
-  // color: $clr1;
   text-transform: uppercase;
   @include type(boldCondensed);
 }

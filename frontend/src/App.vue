@@ -1,9 +1,7 @@
 <template>
     <UserMsg />
-    <div class="main-layout">
-        <AppHeader />
-        <RouterView />
-    </div>
+    <AppHeader />
+    <RouterView />
 </template>
 
 

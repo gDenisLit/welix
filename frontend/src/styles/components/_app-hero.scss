@@ -85,15 +85,8 @@
             position: relative;
             top: 350px;
             cursor: pointer;
-            animation: beat 1.4s infinite alternate;
             transform-origin: center;
             color: $light-color;
-
-            @keyframes beat {
-                to {
-                    transform: scale(1.1);
-                }
-            }
         }
     }
 }

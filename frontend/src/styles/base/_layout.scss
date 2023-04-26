@@ -1,13 +1,23 @@
 .main-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    // min-height: 100vh;
+    // width: 100vw;
+    // > *{
+    //     padding-inline: rem(50px); 
+    // }
 
-    > *{
-        padding-inline: rem(50px); 
+    // > *.full {
+    //     padding-inline: 0 
+    // }   
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+
+    >* {
+        grid-column: 2;
     }
-    
-    > *.full {
-        padding-inline: 0 
-    }   
+
+    >*.full {
+        grid-column: 1/-1;
+    }
 }
