@@ -33,6 +33,11 @@
                 font-size: 1.2em;
                 margin-block-end: em(21px);
             }
+
+            .header-link.action:hover {
+                background-color: $light-color;
+                color: $dark-color
+            }
         }
 
         .img-container {

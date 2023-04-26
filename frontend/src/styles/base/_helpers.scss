@@ -54,11 +54,11 @@
   display: inline-block;
 
   @include for-narrow-layout {
-      font-size: em(16px);
+    font-size: em(16px);
   }
 
   &.link-dashboard {
-      padding-right: 0;
+    padding-right: 0;
   }
 }
 
@@ -67,8 +67,8 @@
   color: $light-color;
 
   &:hover {
-      background-color: $dark-color;
-      color: $light-color;
+    background-color: $dark-color;
+    color: $light-color;
   }
 }
 
